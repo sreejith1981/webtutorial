@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+Compose Email
+{% endblock %}
+
+{% block body %}
+{{ form_start(form, { 'attr': {'class': 'forms'} }) }}
+{{ form_errors(form) }}
+<p>
+    {{ form_label(form.recipientAddress, 'To: ', {'label_attr': {'class': 'label'}}) }}
+    {{ form_widget(form.recipientAddress, { 'attr': {'class': 'text border'} }) }}
+    <span class="error">
+        {% for error in form.recipientAddress.vars.errors %}
+        {{ error.message }} <br/>
+        {% endfor %}
+    </span>
+</p>
+
+<p class="hide">
+    {{ form_widget(form.replyTo) }}
+</p>
+
+<p>
+    {{ form_label(form.cc, 'Cc: ', {'label_attr': {'class': 'label'}}) }}
+    {{ form_widget(form.cc, { 'attr': {'class': 'text border'} }) }}
+    <span class="error">
+        {% for error in form.cc.vars.errors %}
+        {{ error.message }} <br/>
+        {% endfor %}
+    </span>
+</p>
+
+<p>
+    {{ form_label(form.bcc, 'Bcc: ', {'label_attr': {'class': 'label'}}) }}
+    {{ form_widget(form.bcc, { 'attr': {'class': 'text border'} }) }}
+    <span class="error">
+        {% for error in form.bcc.vars.errors %}
+        {{ error.message }} <br/>
+        {% endfor %}
+    </span>
+</p>
+
+<p>
+    {{ form_label(form.attachment, 'Attach: ', {'label_attr': {'class': 'label'}}) }}
+    {{ form_widget(form.attachment) }}
+    <span class="error">
+        {% for error in form.attachment.vars.errors %}
+        {{ error.message }} <br/>
+        {% endfor %}
+    </span>
+</p>
+
+<p>
+    {{ form_label(form.subject, 'Subject: ', {'label_attr': {'class': 'label'}}) }}
+    {{ form_widget(form.subject, { 'attr': {'class': 'text'} }) }}
+    <span class="error">
+        {% for error in form.subject.vars.errors %}
+        {{ error.message }} <br/>
+        {% endfor %}
+    </span>
+</p><p>
+    {{ form_widget(form.body, { 'attr': {'class': 'text border-all'} }) }}
+    <span class="error">
+        {% for error in form.body.vars.errors %}
+        {{ error.message }} <br/>
+        {% endfor %}
+    </span>
+</p>
+
+<p class="hide">
+    {{ form_widget(form.altBody) }}
+</p>
+
+<p>
+    {{ form_widget(form.send, { 'attr': {'class': 'button'} }) }}
+</p>
+{{ form_end(form) }}
+{% endblock %}
