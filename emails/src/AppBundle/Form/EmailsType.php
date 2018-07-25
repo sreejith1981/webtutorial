@@ -18,8 +18,8 @@ class EmailsType extends AbstractType
             ->add('cc', TextType::class, array('required' => false))
             ->add('bcc', TextType::class, array('required' => false))
             ->add('attachment', FileType::class, array('required' => false))
-            ->add('subject', TextType::class)
-            ->add('body', TextType::class)
+            ->add('subject', TextType::class, array('required' => false))
+            ->add('body', TextareaType::class)
             ->add('altBody', TextType::class, array('required' => false))
             ->add('send', SubmitType::class, array('label' => 'Send'))
         ;

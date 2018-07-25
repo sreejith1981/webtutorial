@@ -60,7 +60,7 @@ Compose Email
         {% endfor %}
     </span>
 </p><p>
-    {{ form_widget(form.body, { 'attr': {'class': 'text border-all'} }) }}
+    {{ form_widget(form.body, { 'attr': {'class': 'text-area border-all'} }) }}
     <span class="error">
         {% for error in form.body.vars.errors %}
         {{ error.message }} <br/>

@@ -7,6 +7,7 @@ a { text-decoration: none; }
 .forms { width: 700px; margin: 0 auto; }
 .label { font-size: 16px; padding: 5px 0; }
 .text { width: 100%; height: 40px; border: none; font-size: 16px; padding: 0 10px; box-sizing: border-box; }
+.text-area { width: 100%; height: 180px; }
 .border { border-bottom: 1px solid #A7A7A7; }
 .border-all { border: 1px solid #A7A7A7; }
 .button { font-size: 20px; padding: 15px 20px; font-weight: bold; background:#5d6d7e; border: none; cursor: pointer; color: #fff; }
